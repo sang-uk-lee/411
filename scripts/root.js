@@ -25,7 +25,6 @@ const ddaySecondsTogether = document.getElementById('dday_secondsTogether');
 const myBirthday = new Date('1997-03-11');
 const partnerBirthday = new Date('1997-04-11');
 let modalNoClickCount = 0;
-let startDate;
 
 updateTimer(myBirthday, partnerBirthday)
 setInterval(() => {
@@ -54,31 +53,18 @@ modalYesButton.addEventListener('click', () => {
     photos.style.gap = '15px';
     heart.style.animation = 'heartbeat 0.5s infinite';
 
-    // Confetti render
-    confettiCanvas.classList.remove('hidden');
-    startConfetti();
-
     // Dday section visible
-    startDate = new Date();
+    const startDate = new Date();
     ddaySection.style.display = 'flex';
     ddaySection.classList.add('visible');
     ddayStartedAt.textContent = startDate.toLocaleString();
     setInterval(() => {
-        const now = new Date();
-        const elapsed = now - startDate;
-        const startAgeWookie = calculateAge(dobWookie, startDate);
-        const startAgeHyuna = calculateAge(dobHyuna, startDate);
-
-        const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
-        const seconds = Math.floor((elapsed / 1000) % 60);
-
-        ddayDaysTogether.textContent = days;
-        ddayHoursTogether.textContent = hours;
-        ddayMinutesTogether.textContent = minutes;
-        ddaySecondsTogether.textContent = seconds;
+        updateDday(myBirthday, partnerBirthday, startDate);
     }, 1000);
+
+    // Confetti render
+    confettiCanvas.classList.remove('hidden');
+    startConfetti();
 });
 
 modalNoButton.addEventListener('click', () => {
@@ -102,6 +88,23 @@ function updateTimer(dobWookie, dobHyuna) {
     timerYearsOld.textContent = `${ageWookie.years} year${ageWookie.years > 1? 's': ''}, `;
     timerMonthsOld.textContent = `${ageWookie.months} or ${ageHyuna.months} month${ageWookie.months > 1 || ageHyuna.months > 1 ? 's':''}, `;
     timerDaysOld.textContent = `and ${ageWookie.days} day${ageWookie.days > 1 ? 's':''} old`;
+}
+
+function updateDday(dobWookie, dobHyuna, startDate) {
+    const now = new Date();
+    const elapsed = now - startDate;
+    const startAgeWookie = calculateAge(dobWookie, startDate);
+    const startAgeHyuna = calculateAge(dobHyuna, startDate);
+
+    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+    const seconds = Math.floor((elapsed / 1000) % 60);
+
+    ddayDaysTogether.textContent = `${days}`;
+    ddayHoursTogether.textContent = `${hours}`;
+    ddayMinutesTogether.textContent = `${minutes}`;
+    ddaySecondsTogether.textContent = `${seconds}`;
 }
 
 function calculateAge(birthday, currentDate) {
