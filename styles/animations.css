@@ -1,0 +1,38 @@
+#wookie, #hyuna {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.heart {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    animation: heartbeat 5s infinite ease-in-out;
+}
+
+@keyframes magnet1 {
+    0%, 100% {
+        transform: translateX(-10px);
+    }
+    70% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes magnet2 {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    70% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(1.2);
+    }
+}

@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    background: var(--color-mine);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.hidden {
+    display: none;
+}

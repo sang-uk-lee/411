@@ -1,3 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <title>411</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="AAAAAAAAAAA">
+    <meta property="og:title" content="From. 311, To. 411">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="AAAAAAAAA">
+    <meta property="og:url" content="https://411.sanguk.io">
+    <meta property="og:image" content="/assets/images/AAAAAAAA">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/components.css"> -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#3000ff">
+    <meta name="msapplication-TileImage" content="./assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#3000ff">
+    <script src="./scripts/root.js" defer></script>
+    <!-- <script src="./scripts/main.js"></script>
+    <script src="./scripts/modal.js"></script>
+    <script src="./scripts/dday.js"></script>
+    <script src="./scripts/confetti.js"></script> -->
+</head>
+<body>
+    <main class="container">
+        <section class="curtain" id="curtain">
+            <p>
+                <span class="to-text">To. </span>
+                <span class="number-text">411</span>
+            </p>
+        </section>
+        <main class="main" id="main">
+            <section class="photos" id="photos">
+                <img src="./assets/images/411-wook.jpg" alt="Photo of me" id="wookie">
+                <img src="./assets/images/heart-insta.png" alt="Heart" id="heart">
+                <img src="./assets/images/411-hyuna.jpg" alt="Photo of you" id="hyuna">
+            </section>
+            <section class="answer" id="answer">
+                <button class="button" id="answerButton">Answer Me</button>
+            </section>
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal" id="modal">
+                <button class="modal-close" id="modalCloseButton">&times;</button>
+                <div class="modal-text" id="modalText">Say Yes</div>
+                <div class="modal-buttons">
+                    <button class="yes" id="modalYesButton">Yes</button>
+                    <button class="no" id="modalNoButton">No</button>
+                </div>
+            </div>
+            <section class="timer" id="timer">
+                <p id="time"><span id="timer_currentTime">[Error: hey clock?]</span></p>
+                <p id="age">
+                    <span class="icon-wrapper">
+                        <img src="./assets/images/411-wook_hyuna.jpg" alt="Together" class="together-icon">
+                    </span>
+                    <span id="timer_yearsOld">0 year, </span>
+                    <span id="timer_monthsOld">0 month, </span>
+                    <span id="timer_daysOld">and 0 day</span>
+                </p>
+            </section>
+            <section class="dDay hidden" id="dDay">
+                <p class="dDay-heading">Our Journey Begins</p>
+                <div class="dDay-content">
+                    <p>Our clock started at: <span id="dday_startedAt">[Error: hey clock?]</span></p>
+                    <p>
+                        <span id="dday_daysTogether">0</span> days, 
+                        <span id="dday_hoursTogether">0</span> hours, 
+                        <span id="dday_minutesTogether">0</span> minutes, and 
+                        <span id="dday_secondsTogether">0</span> seconds together.
+                    </p>
+                </div>
+            </section>
+        </main>
+        
+        <canvas class="confetti" id="confettiCanvas"></canvas>
+    </main>
+</body>
 </html>
