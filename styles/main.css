@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Arita';
+    src: url('../assets/fonts/aritaburikr-medium-webfont.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* --color-mine: rgba(19, 39, 29, 0.95); */
     --color-mine: #13271d;
@@ -10,7 +17,7 @@ body {
     margin: 0;
     background: var(--color-mine);
     /* background: linear-gradient(var(--color-mine), var(--color-yours)); */
-    font-family: Arial, sans-serif;
+    font-family: 'Arita', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +32,7 @@ body {
     text-align: center;
     color: white;
 }
-.curtain {
+.letter-to {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,8 +50,8 @@ body {
     margin-bottom: 2vh;
     box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.1);
 }
-.curtain p {
-    font-family: 'Playfair Display', serif;
+.letter-to p {
+    font-family: 'Arita', serif;
     font-style: italic;
     font-weight: bold;
     -webkit-background-clip: text;
@@ -52,9 +59,9 @@ body {
     display: inline-block;
     letter-spacing: 1.2px;
     margin: 0;
-    animation: curtainFadeIn 1.5s ease-in-out;
+    animation: letterToFadeIn 1s ease-in-out;
 }
-.curtain p span.to-text {
+.letter-to p span.to-text {
     color: #000000;
     filter: drop-shadow(1px 1px 1px #000000);
     text-shadow: 
@@ -62,7 +69,7 @@ body {
         1px 1px 2px var(--color-mine);
     font-size: 24px;
 }
-.curtain p span.number-text {
+.letter-to p span.name-text {
     color: transparent;
     background: linear-gradient(90deg, #3000ff, #3700ff);;
     -webkit-background-clip: text;
@@ -72,10 +79,11 @@ body {
         /* -1px -1px 2px rgb(38, 29, 84), */
         2px 2px 2px rgba(102, 74, 242, 0.16);
     font-size: 36px;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
-.main {
-    animation: mainFadeIn 2.5s ease-in-out;
+.letter-body {
+    animation: fadeIn 2.5s ease-in-out;
 }
 .photos {
     position: relative;
@@ -110,7 +118,7 @@ body {
     animation: magnet-left 5s infinite ease-in-out;
 }
 #heart {
-    width: 36px;
+    width: 50px;
     position: relative;
     animation: heartbeat 5s infinite ease-in-out;
     filter: drop-shadow(2px 2px 3px #000000);
@@ -129,7 +137,7 @@ body {
     text-align: center;
 }
 .button {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 18px;
     font-weight: bold;
     padding: 12px 24px;
@@ -188,7 +196,7 @@ body {
 }
 /* Timer 텍스트 */
 .timer p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 18px;
     color: #ffffff;
     margin: 10px 0;
@@ -207,7 +215,7 @@ body {
         -1px -1px 1px rgba(255, 255, 255, 0.3);
 } */
 .timer p span#timer_currentTime {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 20px;
     font-weight: bold;
     color: transparent;
@@ -221,7 +229,7 @@ body {
 .timer p span#timer_yearsOld,
 .timer p span#timer_monthsOld,
 .timer p span#timer_daysOld {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 18px;
     font-weight: bold;
     color: transparent;
@@ -280,7 +288,7 @@ body {
     color: #ff5555; /* 닫기 버튼 hover 시 강조 */
 }
 .modal-text {
-    font-family: 'Playfair Display', serif; /* 고급스러운 폰트 */
+    font-family: 'Arita', serif; /* 고급스러운 폰트 */
     font-size: 24px; /* 메인 텍스트 크기 */
     font-weight: bold;
     color: #ffffff;
@@ -294,7 +302,7 @@ body {
     margin-top: 20px;
 }
 .modal-buttons .yes {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 18px;
     font-weight: bold;
     padding: 10px 20px;
@@ -311,7 +319,7 @@ body {
     background: linear-gradient(90deg, #3700ff, #3000ff);
 }
 .modal-buttons .no {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 18px;
     font-weight: bold;
     padding: 10px 20px;
@@ -328,7 +336,7 @@ body {
     background: linear-gradient(90deg, #333333, #555555);
 }
 .modal .fade {
-    animation: fadeInOut 0.5s;
+    animation: fadeInOut 1s;
 }
 
 /* D-Day Section */
@@ -353,7 +361,7 @@ body {
 }
 /* Heading */
 .dDay-heading {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 28px; /* 강조된 폰트 크기 */
     font-weight: bold;
     color: #ffffff;
@@ -363,7 +371,7 @@ body {
 }
 /* Content */
 .dDay-content p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.9);
     margin: 10px 0;
@@ -371,7 +379,7 @@ body {
 }
 /* 숫자 강조 */
 .dDay-content span {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arita', serif;
     font-size: 24px;
     font-weight: bold;
     color: transparent;
@@ -381,13 +389,53 @@ body {
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.confetti {
+.confettiCanvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
+    z-index: 1000;
+}
+.confettiIcon {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3000ff;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    text-align: center;
+    z-index: 1100;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.replayIcon {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #13271d;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    text-align: center;
+    z-index: 1100;
+    animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes magnet-right {
@@ -430,7 +478,7 @@ body {
         transform: scale(2);
     }
 }
-@keyframes curtainFadeIn {
+@keyframes letterToFadeIn {
     0% {
         opacity: 0;
         /* transform: translateY(20px); */
@@ -440,7 +488,7 @@ body {
         /* transform: translateY(0); */
     }
 }
-@keyframes mainFadeIn {
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>411</title>
+    <title>To. 411</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="AAAAAAAAAAA">
-    <meta property="og:title" content="From. 311, To. 411">
+    <meta property="og:title" content="To. 411">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="AAAAAAAAA">
+    <meta property="og:description" content="From. 311">
     <meta property="og:url" content="https://411.sanguk.io">
     <meta property="og:image" content="/assets/images/AAAAAAAA">
     <meta name="robots" content="noindex, nofollow">
@@ -41,24 +41,24 @@
     <script src="./scripts/confetti.js"></script> -->
 </head>
 <body>
-    <main class="container">
-        <section class="curtain" id="curtain">
+    <div class="container">
+        <section class="letter-to">
             <p>
                 <span class="to-text">To. </span>
-                <span class="number-text">411</span>
+                <span class="name-text">411</span>
             </p>
         </section>
-        <main class="main" id="main">
+        <main class="letter-body">
             <section class="photos" id="photos">
                 <img src="./assets/images/411-wook.jpg" alt="Photo of me" id="wookie">
-                <img src="./assets/images/heart-insta.png" alt="Heart" id="heart">
+                <img src="./assets/images/heart.svg" alt="Heart" id="heart">
                 <img src="./assets/images/411-hyuna.jpg" alt="Photo of you" id="hyuna">
             </section>
             <section class="answer" id="answer">
                 <button class="button" id="answerButton">Answer Me</button>
             </section>
             <div class="modal-backdrop" id="modalBackdrop"></div>
-            <div class="modal" id="modal">
+            <div class="modal fade" id="modal">
                 <button class="modal-close" id="modalCloseButton">&times;</button>
                 <div class="modal-text" id="modalText">Say Yes</div>
                 <div class="modal-buttons">
@@ -69,7 +69,7 @@
             <section class="dDay hidden" id="dDay">
                 <p class="dDay-heading">Our Journey Begins</p>
                 <div class="dDay-content">
-                    <p>Started At: <span id="dday_startedAt">[Error: hey clock?]</span></p>
+                    <p><span id="dday_startedAt">[Error: hey clock?]</span></p>
                     <p>
                         <span id="dday_daysTogether">0</span> days, 
                         <span id="dday_hoursTogether">0</span> hours, 
@@ -90,8 +90,11 @@
                 </p>
             </section>
         </main>
-        
-        <canvas class="confetti" id="confettiCanvas"></canvas>
-    </main>
+        <canvas class="confettiCanvas" id="confettiCanvas"></canvas>
+        <section class="feature-buttons">
+            <div class="confettiIcon" id="confettiIcon">🎉</div>
+            <div class="replayIcon" id="replayIcon">🔄</div>
+        </section>
+    </div>
 </body>
 </html>
