@@ -42,59 +42,38 @@
 </head>
 <body>
     <div class="container">
-        <section class="letter-to">
-            <p>
-                <span class="to-text">To. </span>
-                <span class="name-text">411</span>
-            </p>
-        </section>
-        <main class="letter-body">
-            <section class="photos" id="photos">
-                <img src="./assets/images/411-wook.jpg" alt="Photo of me" id="wookie">
-                <img src="./assets/images/heart.svg" alt="Heart" id="heart">
-                <img src="./assets/images/411-hyuna.jpg" alt="Photo of you" id="hyuna">
+        <main class="flex-column">
+            <section class="header">
+                <img src="./assets/images/paper-mask.svg" />
+                <div class="header-line"></div>
+                <div class="header-text">
+                    <span class="to-text">To. </span>
+                    <span class="number-text">411</span>
+                </div>
             </section>
-            <section class="answer" id="answer">
-                <button class="button" id="answerButton">Answer Me</button>
-            </section>
-            <div class="modal-backdrop" id="modalBackdrop"></div>
-            <div class="modal fade" id="modal">
-                <button class="modal-close" id="modalCloseButton">&times;</button>
-                <div class="modal-text" id="modalText">Say Yes</div>
-                <div class="modal-buttons">
-                    <button class="yes" id="modalYesButton">Yes</button>
-                    <button class="no" id="modalNoButton">No</button>
+            <div class="card-wrapper">
+                <!-- <div class="circle"></div> -->
+                <img class="card" src="./assets/images/card-background.svg" />
+                <section class="photos">
+                    <img class="profile-photo" src="./assets/images/411-wook.svg" />
+                    <img class="heart-icon" src="./assets/images/heart.svg" />
+                    <img class="profile-photo right-photo" src="./assets/images/411-hyuna.svg" />
+                </section>
+                <div class="lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="lines bottom-lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
                 </div>
             </div>
-            <section class="dDay hidden" id="dDay">
-                <p class="dDay-heading">Our Journey Begins</p>
-                <div class="dDay-content">
-                    <p><span id="dday_startedAt">[Error: hey clock?]</span></p>
-                    <p>
-                        <span id="dday_daysTogether">0</span> days, 
-                        <span id="dday_hoursTogether">0</span> hours, 
-                        <span id="dday_minutesTogether">0</span> minutes, and 
-                        <span id="dday_secondsTogether">0</span> seconds together.
-                    </p>
-                </div>
-            </section>
-            <section class="timer" id="timer">
-                <p id="time"><span id="timer_currentTime">[Error: hey clock?]</span></p>
-                <p id="age">
-                    <span class="icon-wrapper">
-                        <img src="./assets/images/411-wook_hyuna.jpg" alt="Together" class="together-icon">
-                    </span>
-                    <span id="timer_yearsOld">0 year, </span>
-                    <span id="timer_monthsOld">0 month, </span>
-                    <span id="timer_daysOld">and 0 day</span>
-                </p>
-            </section>
+            <div class="answer-button-wrapper">
+                <div class="answer-button"></div>
+                <div class="answer-button-text">Answer Me</div>
+            </div>
         </main>
-        <canvas class="confettiCanvas" id="confettiCanvas"></canvas>
-        <section class="feature-buttons">
-            <div class="confettiIcon" id="confettiIcon">🎉</div>
-            <div class="replayIcon" id="replayIcon">🔄</div>
-        </section>
     </div>
 </body>
 </html>
