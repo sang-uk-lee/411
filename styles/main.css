@@ -1,8 +1,12 @@
 @font-face {
     font-family: 'Arita Buri KR';
+    font-weight: 100;
     src: url('../assets/fonts/aritaburikr-medium-webfont.woff');
+}
+@font-face {
+    font-family: 'Carlinet';
+    src: url('../assets/fonts/carlinet-webfont.woff');
     font-weight: normal;
-    font-style: normal;
 }
 :root {
     /* --color-mine: rgba(19, 39, 29, 0.95); */
@@ -14,12 +18,24 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Arita Buri KR', sans-serif;
+    background: var(--color-mine);
+    color: white;
 }
 .hidden {
     display: none;
 }
-
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    max-height: 100vh;
+    padding: 16px;
+}
+
+/* .container {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(180deg, #13271D 0%, #13271D 100%);
@@ -27,47 +43,69 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .flex-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 2.5vh;
 }
 
 .header, .footer {
-    width: 600px;
-    height: 104px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 5vh;
+    background: #13281e;
+    border-radius: 16px;
+    border: 1px solid #282e29;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer {
+
+}
+#age-year {
+    color: var(--color-yours)
+}
+/* .header, .footer {
+    width: 40vw;
+    min-width: 400px;
+    max-width: 550px;
+    height: 10vh;
     position: relative;
     background: #13281E;
     box-shadow: 0px 0px 25px rgba(5.42, 36.12, 19.24, 0.60);
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid #282E29;
-}
-.footer {
-    display: flex;
-    align-items: center;
-    padding: 0
-}
+} */
 .header img.bg, .footer img.bg {
-    width: 600px;
-    height: 104px;
     position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    z-index: 1;
     mix-blend-mode: multiply;
 }
-.header-line {
-    width: 534px;
+/* .header img.bg, .footer img.bg {
     position: absolute;
-    left: 33px;
-    top: 73px;
+    width: 600px;
+    height: 600px;
+    mix-blend-mode: multiply;
+} */
+.header-line {
+    position: absolute;
+    width: 90%;
+    top: 75%;
+    left: 5%;
     border: 1px solid #363A37;
 }
 .header-text {
     padding: 0 32px;
-    width: 00%;
     height: 100%;
     display: inline-flex;
     justify-content: space-between;
@@ -76,135 +114,155 @@ body {
 .header-text .to-text {
     text-align: center;
     color: white;
-    width: 50.83px;
-    height: 28.50px;
-    font-size: 24px;
-    font-family: "Arita Buri KR";
-    font-weight: 300;
+    font-size: 1.5em;
     letter-spacing: 1.20px;
     word-wrap: break-word
 }
+.header-text .text-spacing {
+    width: 1.5vw;
+}
 .header-text .number-text {
     color: #3000FF;
-    font-size: 20px;
+    font-size: 1.25em;
     font-family: "Carlinet";
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 10px;
     word-wrap: break-word;
 }
 
-.card-wrapper {
+/* .card-wrapper {
     width: 600px;
-    height: 453px;
-    /* display: flex;
-    flex-direction: column; */
+    height: 50vh;
     justify-content: center;
     align-items: center;
-}
-.card-inner {
+} */
+.card-wrapper {
+    width: 90vw;
+    /* height: 50vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
-.main-card {
-    width: 600px;
-    height: 453px;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.25);
+.card-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50vw;
+    max-width: 100%;
 }
 .heart-icon {
-    width: 50px;
-    height: 50px;
     position: absolute;
-    left: 275px;
-    top: 201.25px;
+    width: 12.5%; /* 75px 기준, 원래 width의 비율 */
+    height: 12.5%; /* 75px 기준, 원래 height의 비율 */
+    left: calc(50% - 6.25%); /* 중앙 정렬 */
+    top: calc(50% - 6.25%); /* 중앙 정렬 */
     transition: width 1s ease-out, height 1s ease-out;
+    animation: heartbeat 3s infinite;
 }
 .profile-photo {
-    width: 140px;
-    height: 140px;
     position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 36%;
     transition: transform 1s ease-out;
+    border-radius: 50%;
 }
 .profile-photo img {
-    width: 118px;
-    height: 118px;
-    left: 11px;
-    top: 10.75px;
+    width: 100%;
+    height: 100%;
     box-shadow: 1px 1px 1px rgba(188, 188, 188, 0.25);
-    border-radius: 1000px;
+    border-radius: 50%;
 }
 .left-photo {
-    left: 78px;
-    top: 156.25px;
+    left: 13%;
+    animation: magnet-right 3s infinite;
 }
 .right-photo {
-    left: 379px;
-    top: 156.25px;
+    right: 13%;
+    animation: magnet-left 3s infinite;
 }
-/* .right-photo img {
-    width: 124px;
-    height: 124px;
-    left: 8px;
-    top: 7.75px;
-} */
-
 .lines {
     position: absolute;
-    width: 450px;
-    height: 32px;
-    left: 75px;
-    top: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6vh;
+    width: 80%;
+    min-width: 50vw;
+    max-width: 100%;
 }
-
-.lines .line {
-    width: 450px;
-    height: 0;
+.header-line {
     position: absolute;
+    width: 90%;
+    top: 75%;
+    /* left: 5%; */
+    border: 1px solid #363A37;
+}
+.lines .line {
+    position: absolute;
+    width: 90%;
+    top: 50%;
     border: 1px solid #363A37;
     transition: opacity 0.5s ease-out;
 }
-
 .lines .line:nth-child(2) {
-    top: 32px;
+    top: 2vh;
 }
-
 .bottom-lines {
-    top: 329px;
-    height: 64px;
+    top: 65%;
 }
-
 .bottom-lines .line:nth-child(3) {
-    top: 64px;
+    top: 4vh;
 }
 
-.answer-button-wrapper {
+/* .answer-button-wrapper {
     width: 250px;
     height: 50px;
     position: relative;
-    box-shadow: 0px 2px 10px #11241A;
-    border-radius: 500px;
+    background: #1B1397;
+    border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
+} */
+.answer-button-wrapper {
+    width: 80%;
+    max-width: 250px;
+    height: 50px;
+    background: var(--color-button);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
-
+.answer-button-wrapper img.mask {
+    position: absolute;
+    z-index: -1;
+    mix-blend-mode: multiply;
+}
+.answer-button {
+    position: absolute;
+    background: #1B1397;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25) inset; 
+}
 .answer-button-wrapper:hover {
     opacity: 0.8;
 }
-
-.answer-button {
-    width: 250px;
-    height: 50px;
-    position: absolute;
-    background: #1B1397;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25) inset;
-    border-radius: 24px;
-}
-
 .answer-button-text {
     position: absolute;
-    left: 68px;
-    top: 12px;
     text-align: center;
     color: white;
-    font-size: 22px;
+    font-size: 1em;
     font-family: "Arita Buri KR", sans-serif;
     font-weight: 700;
     word-wrap: break-word;
@@ -215,91 +273,116 @@ body {
 }
 
 .profile-couple-wrapper {
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
-    margin-left: 32px;
-    margin-right: 32px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
-.journey-section {
+/* .journey-section {
     width: 100%;
     max-width: 600px;
-    margin: 20px auto;
+    text-align: center;
+    background-color: #1a2e22;
+} */
+.journey-section {
+    width: 90vw;
+    max-width: 600px;
+    background: #1a2e22;
+    border-radius: 16px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
-
 .journey-container {
     display: flex;
-    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    max-height: 25vh;
+    gap: 6px;
     margin: 0 auto;
     max-width: 600px;
 }
-
+.journey-left-card, .journey-right-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #13271d;
+    border-radius: 16px;
+    padding: 0px 16px 0px 16px;
+    border: 1px solid #282e29;
+    height: 100%;
+}
 .journey-left-card {
-    flex: 0.4; /* 왼쪽 카드를 조금 더 작게 */
+    width: 20%;
+}
+.journey-right-card {
+    width: 80%;
+}
+.journey-title {
+    color: #D9D9D9;
+    font-family: "Arita Buri KR", sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: #D9D9D9;
+    word-wrap: break-word;
+}
+
+/* .journey-left-card {
+    flex: 0.6;
     background-color: #13271d;
     border-radius: 16px;
-    padding: 0px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #282E29;
 }
-
 .journey-right-card {
-    flex: 1.6; /* 오른쪽 카드를 조금 더 크게 */
-    background-color: #13271d;
-    border-radius: 16px;
-    padding: 32px 24px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex: 1.4;
+    background-color: #13271d;
+    border-radius: 16px;
     border: 1px solid #282E29;
-}
-
-.journey-title {
-    color: #D9D9D9;
-    font-family: "Arita Buri KR", sans-serif;
-    font-size: 20px;
-    text-align: center;
-    margin: 0;
-    line-height: 1.4;
-    letter-spacing: -0.4px;
-}
-
-.time-together, 
-.seconds-together {
-    font-size: 20px;
-    color: #D9D9D9;
-    text-align: center;
-    line-height: 1.6;
-}
+} */
 
 .gold-text {
     color: #D4AF37;
     font-weight: bold;
     font-size: 1.2em;
 }
-
 .start-time {
-    font-size: 24px;
-    margin: 10px 0;
-    text-align: center;
-}
-
-.time-together, .seconds-together {
     font-size: 20px;
+    font-family: "Arita Buri KR";
+    font-weight: 500;
+    text-align: center;
+    color: #F7C469;
+    word-wrap: break-word
+}
+.time-together, .seconds-together {
+    font-size: 16px;
+    font-family: "Arita Buri KR";
     color: #D9D9D9;
     text-align: center;
+    line-height: 1.6;
 }
-
 /* 골드 텍스트에 약간의 그라데이션 효과 추가 */
 .gold-text {
     text-align: center;
     text-shadow: 0px 1px 1px rgba(21, 42, 28, 0.25);
     font-family: "Arita Buri KR", sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -309,25 +392,14 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* 시작 시간은 좀 더 크게 */
-.start-time.gold-text {
-    font-size: 32px;
-}
-
-/* 숫자들은 조금 작게 */
-.time-together .gold-text,
-.seconds-together .gold-text {
-    font-size: 28px;
-}
-
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    width: 150%;
+    height: 150%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
 }
 
@@ -338,6 +410,15 @@ body {
 }
 
 .modal-content {
+    background: #1a2e22;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #282e29;
+    max-width: 90%;
+    width: 300px;
+    text-align: center;
+}
+/* .modal-content {
     position: relative;
     background-color: #1a2e22;
     margin: 15% auto;
@@ -346,7 +427,7 @@ body {
     border-radius: 16px;
     color: #d9d9d9;
     border: 1px solid #282E29;
-}
+} */
 
 .close {
     color: #d9d9d9;
@@ -396,14 +477,6 @@ body {
     color: white;
 }
 
-.journey-section {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #1a2e22;
-    border-radius: 10px;
-    color: #d9d9d9;
-    text-align: center;
-}
 
 .confetti-canvas {
     position: fixed;
@@ -413,6 +486,42 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 999;
+}
+
+.shake-animation {
+    animation: shake 0.5s ease-in-out; /* Animation duration is 0.5s */
+}
+
+/* 반응형 스타일 */
+@media screen and (min-width: 768px) {
+    .header, .footer {
+        max-width: 800px;
+        height: 12vh;
+    }
+
+    .card-wrapper {
+        max-width: 800px;
+        height: 60vh;
+    }
+
+    .journey-section {
+        max-width: 800px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header, .footer {
+        max-width: 1000px;
+    }
+
+    .card-wrapper {
+        max-width: 1000px;
+        height: 60vh;
+    }
+
+    .journey-section {
+        max-width: 1000px;
+    }
 }
 
 @keyframes magnet-right {
@@ -471,5 +580,23 @@ body {
     }
     100% {
         opacity: 1;
+    }
+}
+/* 도리도리 애니메이션 */
+@keyframes shake {
+    0% {
+        transform: translateX(0); /* 초기 상태 */
+    }
+    25% {
+        transform: translateX(-15px); /* 왼쪽으로 이동 */
+    }
+    50% {
+        transform: translateX(15px); /* 오른쪽으로 이동 */
+    }
+    75% {
+        transform: translateX(-10px); /* 다시 왼쪽으로 이동 */
+    }
+    100% {
+        transform: translateX(0); /* 원래 위치로 복귀 */
     }
 }

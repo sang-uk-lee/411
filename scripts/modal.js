@@ -12,8 +12,13 @@ let startTime;
 let noClickCount = 0;
 
 // Event Listeners
+window.addEventListener('resize', () => {
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+});
+
 answerMeBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
 });
 
 closeBtn.addEventListener('click', () => {
@@ -22,8 +27,19 @@ closeBtn.addEventListener('click', () => {
 
 noBtn.addEventListener('click', () => {
     noClickCount++;
+    if (noClickCount < 3) {
+        modal.classList.add("shake-animation");
+
+        setTimeout(() => {
+            modal.classList.remove("shake-animation");
+        }, 500);
+    }
     if (noClickCount >= 3) {
         noBtn.textContent = 'Yes';
+    }
+    if (noClickCount === 4) {
+        modal.style.display = 'none';
+        startCelebration();
     }
 });
 
@@ -37,7 +53,7 @@ function createConfetti() {
     const colors = ['#13271d', '#3000ff', '#1e3d34', '#3f5db3', '#265f6c', '#4d6dbb'];
     const confetti = [];
     
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 200; i++) {
         confetti.push({
             x: Math.random() * window.innerWidth,
             y: -10,
@@ -109,17 +125,15 @@ function startCelebration() {
     const leftPhoto = document.querySelector('.left-photo');
     const rightPhoto = document.querySelector('.right-photo');
     const heart = document.querySelector('.heart-icon');
-    
-    // 캐릭터 이동 및 하트 크기 조정
-    leftPhoto.style.transform = 'translateX(40px)'; // 오른쪽으로 이동
-    rightPhoto.style.transform = 'translateX(-40px)'; // 왼쪽으로 이동
-    heart.style.width = '60px'; // 하트 크기 키우기
-    heart.style.height = '60px';
-    
+
     // 부드러운 애니메이션을 위한 transition 추가
     leftPhoto.style.transition = 'transform 1s ease-out';
     rightPhoto.style.transition = 'transform 1s ease-out';
     heart.style.transition = 'width 1s ease-out, height 1s ease-out';
+    
+    // 캐릭터 이동 및 하트 크기 조정
+    leftPhoto.style.transform = 'scale(2,2)';
+    rightPhoto.style.transform = 'scale(2,2)';
     
     // Confetti 시작
     confettiCanvas.width = window.innerWidth;
